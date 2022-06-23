@@ -1,8 +1,7 @@
 {
-  "name": "A_Renting_House",
+  "name": "a_renting_house",
   "version": "1.0.0",
   "private": true,
-  "description": "",
   "templateInfo": {
     "name": "default",
     "typescript": false,
@@ -56,5 +55,16 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-react-hooks": "^1.6.1",
     "stylelint": "9.3.0"
-  }
+  },
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qingxuanying/A_Renting_House.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qingxuanying/A_Renting_House/issues"
+  },
+  "homepage": "https://github.com/qingxuanying/A_Renting_House#readme",
+  "description": ""
 }
