@@ -1,0 +1,72 @@
+.header{
+    position: fixed;
+    /* display: none; */
+    height: 20%;
+    width: 100%;
+    background-color: #0A2442;
+    overflow: hidden;
+    justify-content: center;
+    border-radius: 0 0 40px 40PX;
+}
+.search{
+    font-size: larger;
+    width: 85%;
+    height: 100px;
+    margin: 0 auto;
+    padding-top: 15%;
+    display: flex;
+    justify-content: space-around;
+    /* border: white 3px solid; */
+}
+.search_main{
+    display: flex;
+    background-color: white;
+    border-radius: 30px;
+    /* width: 80%; */
+    margin-right: 10%;
+}
+.search_input{
+    padding-top: 8%;
+    padding-bottom: 7%;
+    width: 100%;
+}
+.search_img{
+    padding-top: 8%;
+    padding-bottom: 7%;
+    width: 50px;
+    height: 50px;
+}
+.search_icon{
+    
+    width: 100px;
+    height: 100px;
+    
+}
+
+.recommendation{
+    font-size: large;
+    font-weight: bolder;
+}
+/* .select{
+    margin-top: 50%;
+    position: absolute;
+    width: 100%;
+    border:3px solid rebeccapurple;
+    
+}
+.selections{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    border: 3px solid red;
+    background-color: azure;
+    margin: 0 auto;
+    height: max-content;
+    font-size: x-large;
+}
+.selection{
+    border: solid black;
+    padding: 5%;
+    border-radius:40px ; 
+}*/
+
