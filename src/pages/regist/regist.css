@@ -8,46 +8,30 @@
     background: linear-gradient(200deg, #f3e7e9, #e3eeff);
   }
   
-  .container {
-    width: max-content;
+.regist_container {
+    width: 100%;
     height: max-content;
   }
   
-  .input {
-    border: 1px solid #a262ad80;
+  .regist_input{
+    font-size: large;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border: black solid 2px;
+    border-radius: 20px;
+    width: 80%;
+    margin: 7% auto;
+  }
+
+  .regist_text{
     font-size: x-large;
-    outline: none;
-    border-radius: 3px;
-    padding: 7%;
-    text-shadow: 0 1px 0 #deafaf, 0 0 5px rgba(138, 230, 212, 0.05),
-      0 -1px 3px rgba(139, 223, 222, 0.2), 0 9px 9px rgba(140, 221, 227, 0.3),
-      0 12px 12px rgba(140, 222, 224, 0.3), 0 15px 15px rgba(138, 231, 210, 0.3);
-  }
-  
-  .userinput {
-    margin-bottom: 20px;
-  }
-  
-  .pwdinput {
-    margin-bottom: 20px;
-  }
-  
-  .botton {
-    width: max-content;
-    height: max-content;
-    font-size: xx-large;
-  
+    border: 2px solid red;
+    text-align: center;
+    color: white;
+    background-color: #0A2442;
+    width: 60%;
+    height: 100px;
     margin: 0 auto;
-    margin-bottom: 20px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-  
-    background-color: #fff;
-    color: #a262ad;
-    border: 1px solid #d3b7d8;
-    padding: 6px 10px;
-    border-radius: 5px;
-    letter-spacing: 1px;
-    outline: none;
-    cursor: pointer;
+    border-radius: 50PX;
+    line-height: 100px;
   }
-  

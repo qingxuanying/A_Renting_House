@@ -8,45 +8,70 @@
   background: linear-gradient(200deg, #f3e7e9, #e3eeff);
 }
 
-.container {
-  width: max-content;
+.container{
+  z-index: 0;
+  width: 70%;
   height: max-content;
+  padding-top: 16%;
 }
 
-.input {
-  border: 1px solid #a262ad80;
-  font-size: x-large;
-  outline: none;
-  border-radius: 3px;
-  padding: 7%;
-  text-shadow: 0 1px 0 #deafaf, 0 0 5px rgba(138, 230, 212, 0.05),
-    0 -1px 3px rgba(139, 223, 222, 0.2), 0 9px 9px rgba(140, 221, 227, 0.3),
-    0 12px 12px rgba(140, 222, 224, 0.3), 0 15px 15px rgba(138, 231, 210, 0.3);
+.centercontainer{
+  border-radius: 40px;
+  background-color: white;
+  padding-bottom: 10%;
 }
 
-.userinput {
-  margin-bottom: 20px;
+.inputline{
+  border-top: solid 3px gainsboro;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  padding-left: 20px;
+  
+}
+.text{
+  font-size: large;
+  padding-bottom: 20px;
+}
+.input{
+  font-size: large;
+
+}
+.footer{
+  z-index: 1;
+  position: absolute;
+  top: 65%;
+  width: 70%;
 }
 
-.pwdinput {
-  margin-bottom: 20px;
-}
-
-.botton {
-  width: max-content;
-  height: max-content;
-  font-size: xx-large;
-
+.botom{
+  border: 2px solid red;
+  text-align: center;
+  color: white;
+  background-color: #0A2442;
+  height: 100px;
+  width: 80%;
+  border-radius: 50PX;
   margin: 0 auto;
-  margin-bottom: 20px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-
-  background-color: #fff;
-  color: #a262ad;
-  border: 1px solid #d3b7d8;
-  padding: 6px 10px;
-  border-radius: 5px;
-  letter-spacing: 1px;
-  outline: none;
-  cursor: pointer;
+  line-height: 100px;
+}
+.footer_text{
+  text-align: center;
+  padding-top: 150px;
+}
+.to_regist{
+  text-decoration: underline;
+}
+.back{
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  height: 60%;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+.img{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
