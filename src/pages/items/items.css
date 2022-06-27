@@ -1,9 +1,14 @@
+.body{
+    width: 100%;
+    height: 260px;
+}
 .item{
     width: 80%;
     margin: 0 auto;
     border-radius: 45px;
-    background-color: aqua;
-    height: 300px;
+    background-color: gainsboro;
+    height: 230px;
+    display: flex;
 }
 
 .leftItem{
@@ -12,10 +17,52 @@
     /* background-color: blueviolet; */
 }
 .rightItem{
-    width: 70%;
-    height: 300px;
+    width: 60%;
+    height: 230px;
+    display: block;
+    margin-left: 10%;
 }
 .leftimg{
     width: 100%;
-    height: 300px;
+    height: 230px;
+}
+.name{
+    margin-top: 5%;
+    font-size: x-large;
+    font-weight: bold;
+}
+.price{
+    margin-top: 5%;
+    border: solid black 2px;
+    width: 60%;
+    padding: 4%;
+    border-radius: 20px;
+}
+.bott{
+    overflow: hidden;
+    /* border: 3px solid red; */
+    height: 22.5%;
+    margin-top: 3%;
+    display: flex;
+    
+}
+.icon_items{
+    height: 50px;
+    width: 50px;
+    /* border: solid 3px black; */
+    margin-right: 2px;
+}
+.bed{
+    /* border: solid 2px black; */
+    margin-right: 2%;
+    padding-right:8% ;
+}
+.bathroom{
+    /* border: solid 2px black; */
+    margin-right: 2%;
+    padding-right:8% ;
+}
+.star{
+    /* border: solid 2px black; */
+    padding-right:8% ;
 }

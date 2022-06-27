@@ -7,6 +7,7 @@
     overflow: hidden;
     justify-content: center;
     border-radius: 0 0 40px 40PX;
+    z-index: 999;
 }
 .search{
     font-size: larger;
@@ -49,6 +50,7 @@
     margin-top: 45%;
     position: absolute;
     margin-left: 30px;
+    
 }
 /* .select{
     margin-top: 50%;
@@ -77,4 +79,26 @@
     position: absolute;
     width: 100%;
     height: max-content;
+
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    height: 150px;
+    width: 100%;
+    background-color: #0A2442;
+    display: flex;
+    z-index: 999;
+}
+.daohang{
+    width: 33.3%;
+    height: 100%;
+    border: red solid 3px;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+}
+.daohang_img{
+    height: 80px;
+    width: 80px;
 }
