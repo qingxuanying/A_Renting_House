@@ -4,6 +4,7 @@ import { View, Text, Input, Image, Icon } from '@tarojs/components'
 import img_search from './img/search.png'
 import icon from './img/icon.png'
 import './index.css'
+import Items from '../items/items'
 
 export default class Index extends Component {
 
@@ -39,6 +40,15 @@ export default class Index extends Component {
             <View className='selection'>办公</View>
           </View>
         </View> */}
+
+
+        <View className='recommendation'>
+          <Text className='re_text'>为你推荐</Text>
+        </View>
+        <View className='index_Items'>
+          <Items />
+        </View>
+
 
       </View>
     )

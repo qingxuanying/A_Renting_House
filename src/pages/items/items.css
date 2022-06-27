@@ -1,0 +1,21 @@
+.item{
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 45px;
+    background-color: aqua;
+    height: 300px;
+}
+
+.leftItem{
+    width: 30%;
+    height: 300px;
+    /* background-color: blueviolet; */
+}
+.rightItem{
+    width: 70%;
+    height: 300px;
+}
+.leftimg{
+    width: 100%;
+    height: 300px;
+}
