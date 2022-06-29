@@ -27,14 +27,17 @@
     margin-right: 10%;
 }
 .search_input{
-    padding-top: 8%;
-    padding-bottom: 7%;
+    /* padding-top: 8%;
+    padding-bottom: 7%; */
+    padding: 7%;
     width: 100%;
 }
 .search_img{
-    padding-top: 8%;
-    padding-bottom: 7%;
+    /* padding-top: 8%;
+    padding-bottom: 7%; */
+    padding-top: 7%;
     width: 50px;
+    border: solid red 5px;
     height: 50px;
     padding-right: 5%;
 }

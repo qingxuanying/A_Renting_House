@@ -14,15 +14,15 @@ export default class Index extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      search: '',
       data: []
     }
   }
 
-  componentDidMount(){
-    service.GetAllHouses().then(res=>{
-      if(res){
+  componentDidMount() {
+    service.GetAllHouses().then(res => {
+      if (res) {
         // console.log(res)
-        console.log(res)
         this.setState({
           data: res
         })
@@ -40,7 +40,24 @@ export default class Index extends Component {
       url: '/pages/person/person'
     })
   }
-  
+  getSearch = (e) => {
+    this.setState({
+      search: e.target.value
+    })
+  }
+
+  findByName = () => {
+    let name = this.state.search
+    // console.log('132465')
+    service.findByname(name).then(res => {
+      if (res) {
+        console.log(res)
+        this.setState({
+          data: res
+        })
+      }
+    })
+  }
 
   render() {
     let data = this.state.data
@@ -52,8 +69,8 @@ export default class Index extends Component {
           <View className='search'>
 
             <View className='search_main'>
-              <Input className='search_input' placeholder='搜索房屋'></Input>
-              <Image className='search_img' src={img_search}></Image>
+              <Input className='search_input' placeholder='搜索房屋' onInput={this.getSearch}></Input>
+              <Image className='search_img' src={img_search} onClick={this.findByName}></Image>
             </View>
 
           </View>
@@ -67,7 +84,7 @@ export default class Index extends Component {
           {this.state.data.map((dateobj) => { return <Items key={dateobj.id} {...dateobj} ></Items> })}
           <View className='end'>已经到底了</View>
         </View>
-        
+
 
         <View className='footer'>
           <View className='daohang'>

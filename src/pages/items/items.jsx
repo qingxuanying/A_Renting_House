@@ -4,7 +4,7 @@
 import React, { Component } from 'react'
 import { View, Text, Input, Image, Icon } from '@tarojs/components'
 import './items.css'
-import img1 from './img/1.png'
+// import img1 from './img/1.png'
 import bed from './img/bed.png'
 import bathroom from './img/bathroom.png'
 import star from './img/star.png'
@@ -26,7 +26,7 @@ export default class Items extends Component {
             <Image src={this.props.picture} className='leftimg'></Image>
         </View>
         <View className='rightItem'>
-          <View className='name'>{this.props.location}</View>
+          <View className='name'>{this.props.name}</View>
           <View className='price'>{this.props.price}元/天</View>
           <View className='bott'>
 

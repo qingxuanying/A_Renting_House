@@ -65,16 +65,19 @@ export default class Items extends Component {
     console.log(location)
     service.updateUser(token,username,phone,email,location).then(res=>{
       if(res){
-        Taro.showModal({
-          title: '提示',
-          cancelText: '取消',
-          cancelColor: 'black',
-          confirmText: '确认',
-          confirmColor: 'black',
-          content: '修改成功',
-          showCancel: false,
-        })
-      }
+        // Taro.showModal({
+        //   title: '提示',
+        //   cancelText: '取消',
+        //   cancelColor: 'black',
+        //   confirmText: '确认',
+        //   confirmColor: 'black',
+        //   content: '修改成功',
+        //   showCancel: false,
+        // })
+        Taro.setStorageSync('username',username)
+        Taro.navigateTo({
+          url:'/pages/person/person'
+        })     }
     })
   }
 

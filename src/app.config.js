@@ -5,7 +5,10 @@ export default {
     'pages/index/index',
     'pages/addhouse/addhouse',
     'pages/person/person',
-    'pages/perinfo/perinfo'
+    'pages/perinfo/perinfo',
+    'pages/safe/safe',
+    'pages/help/help',
+    'pages/detail/detail'
   ],
   window: {
     backgroundTextStyle: 'light',

@@ -18,7 +18,8 @@ export default class Addhouse extends Component {
             detail: '',
             locationx:'',
             bed:'',
-            bathromm:''
+            bathromm:'',
+            name:''
 
         }
     }
@@ -98,6 +99,11 @@ export default class Addhouse extends Component {
             bathromm:e.target.value
         })
     }
+    getName = (e) => {
+        this.setState({
+            name:e.target.value
+        })
+    }
 
     release = (e) => {
         let token = Taro.getStorageSync('token')
@@ -109,9 +115,10 @@ export default class Addhouse extends Component {
         let location = this.state.locationx
         let bed = this.state.bed
         let bathromm = this.state.bathromm
+        let name = this.state.name
         
-        if(detail != '' && deposit != '' && price != '' && location != '' && bed != '' && bathromm !=''){
-            service.AddHouse(token, img, deposit, price, duration, detail,location,bed,bathromm).then(res => {
+        if(detail != '' && deposit != '' && price != '' && location != '' && bed != '' && bathromm !='' && name!=''){
+            service.AddHouse(token, img, deposit, price, duration, detail,location,bed,bathromm,name).then(res => {
                 console.log(res)
                 if(res){
                     Taro.navigateTo({
@@ -151,6 +158,10 @@ export default class Addhouse extends Component {
 
                 <View className='zulinxinxi'>
                     <View className='zhulin_text'>租赁信息</View>
+                    <View className='detail'>
+                        <View className='leftx'>名称</View>
+                        <Input className='rightinput' placeholder='请填写房屋名称' onInput={this.getName}></Input>
+                    </View>
                     <View className='detail'>
                         <View className='leftx'>订金</View>
                         <Input className='rightinput' placeholder='请填写金额' onInput={this.getDeposit}></Input>

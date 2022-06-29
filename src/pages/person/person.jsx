@@ -15,10 +15,15 @@ export default class Items extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      name:null
     }
   }
 
+  componentDidMount(){
+    this.setState({
+      name:Taro.getStorageSync('username')
+    })
+  } 
   logout = () => {
     Taro.setStorageSync('id','');
     Taro.setStorageSync('username','');
@@ -29,6 +34,16 @@ export default class Items extends Component {
   toperinfo = () => {
     Taro.navigateTo({
       url: '/pages/perinfo/perinfo'
+    })
+  }
+  toSafe = () => {
+    Taro.navigateTo({
+      url: '/pages/safe/safe'
+    })
+  }
+  toHelp = () => {
+    Taro.navigateTo({
+      url: '/pages/help/help'
     })
   }
 
@@ -43,7 +58,7 @@ export default class Items extends Component {
             <View className='name_img'>
               <Image className='n_img' src={huangguan}></Image>
             </View>
-            <View className='name_text'>{Taro.getStorageSync('username')}</View>
+            <View className='name_text'>{this.state.name}</View>
           </View>
           <View className='identity'>房东/租户</View>
         </View>
@@ -60,7 +75,7 @@ export default class Items extends Component {
             </View>
           </View>
 
-          <View className='ziliao'>
+          <View className='ziliao' onClick={this.toSafe}>
             <View className='leftmain'>
               <Image className='a_img' src={de2}></Image>
               <View className='z_text'>账户安全</View>
@@ -70,7 +85,7 @@ export default class Items extends Component {
             </View>
           </View>
 
-          <View className='ziliao'>
+          <View className='ziliao' onClick={this.toHelp}>
             <View className='leftmain'>
               <Image className='a_img' src={de3}></Image>
               <View className='z_text'>请求帮助</View>
