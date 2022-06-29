@@ -12,6 +12,9 @@ import star from './img/star.png'
 export default class Items extends Component {
   constructor(props){
     super(props)
+    this.state={
+      star:5
+    }
   }
 
   render() {
@@ -20,10 +23,10 @@ export default class Items extends Component {
       <View className='item'>
 
         <View className='leftItem'>
-            <Image src={img1} className='leftimg'></Image>
+            <Image src={this.props.picture} className='leftimg'></Image>
         </View>
         <View className='rightItem'>
-          <View className='name'>{this.props.name}</View>
+          <View className='name'>{this.props.location}</View>
           <View className='price'>{this.props.price}元/天</View>
           <View className='bott'>
 
@@ -33,11 +36,11 @@ export default class Items extends Component {
             </View>
             <View className='bathroom' >
               <Image className='icon_items' src={bathroom}></Image>
-              <Text>{this.props.bathroom}</Text>
+              <Text>{this.props.toilet}</Text>
             </View>
             <View className='star'>
               <Image className='icon_items' src={star}></Image>
-              <Text>{this.props.star}</Text>
+              <Text>{this.state.star}</Text>
             </View>
 
           </View>

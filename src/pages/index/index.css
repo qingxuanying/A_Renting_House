@@ -23,7 +23,7 @@
     display: flex;
     background-color: white;
     border-radius: 30px;
-    /* width: 80%; */
+    width: 100%;
     margin-right: 10%;
 }
 .search_input{
@@ -36,13 +36,14 @@
     padding-bottom: 7%;
     width: 50px;
     height: 50px;
+    padding-right: 5%;
 }
-.search_icon{
+/* .search_icon{
     
     width: 100px;
     height: 100px;
     
-}
+} */
 
 .recommendation{
     font-size: large;
@@ -93,7 +94,8 @@
 .daohang{
     width: 33.3%;
     height: 100%;
-    border: red solid 3px;
+    padding-top: 3%;
+    /* border: red solid 3px; */
     overflow: hidden;
     display: block;
     text-align: center;
@@ -101,4 +103,7 @@
 .daohang_img{
     height: 80px;
     width: 80px;
+}
+.daohang_text{
+    color: white;
 }

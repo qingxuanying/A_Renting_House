@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react'
 import { View, Text, Input, Image, Icon } from '@tarojs/components'
+import Taro from '@tarojs/taro'
+import service from '../../common/service'
 import img_search from './img/search.png'
-import icon from './img/icon.png'
 import img1 from './img/img1.png'
 import img2 from './img/img2.png'
 import img3 from './img/img3.png'
@@ -10,34 +11,40 @@ import './index.css'
 import Items from '../items/items'
 
 export default class Index extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-    this.state={
-      date:[
-        {
-          id:'01',
-          name:'123',
-          price:'321',
-          img:'1',
-          bathroom:'1',
-          bed:'2',
-          star:'3.0'
-        },
-        {
-          id:'02',
-          name:'123s',
-          price:'321d',
-          img:'1a',
-          bathroom:'4',
-          bed:'1',
-          star:'5.0'
-        }
-      ]
+    this.state = {
+      data: []
     }
   }
 
+  componentDidMount(){
+    service.GetAllHouses().then(res=>{
+      if(res){
+        // console.log(res)
+        console.log(res)
+        this.setState({
+          data: res
+        })
+      }
+    })
+  }
+
+  toaddhouse = (e) => {
+    Taro.navigateTo({
+      url: '/pages/addhouse/addhouse'
+    })
+  }
+  toperson = (e) => {
+    Taro.navigateTo({
+      url: '/pages/person/person'
+    })
+  }
+  
+
   render() {
-    let data=this.state.data
+    let data = this.state.data
+    // console.log(data)
     return (
       <View className='index'>
 
@@ -48,7 +55,6 @@ export default class Index extends Component {
               <Input className='search_input' placeholder='搜索房屋'></Input>
               <Image className='search_img' src={img_search}></Image>
             </View>
-            <Image src={icon} className='search_icon'></Image>
 
           </View>
         </View>
@@ -58,21 +64,21 @@ export default class Index extends Component {
         </View>
 
         <View className='index_Items'>
-        {this.state.date.map((dateobj) => { return <Items key={dateobj.id} {...dateobj} ></Items> })}
+          {this.state.data.map((dateobj) => { return <Items key={dateobj.id} {...dateobj} ></Items> })}
         </View>
 
         <View className='footer'>
           <View className='daohang'>
             <Image className='daohang_img' src={img1}></Image>
-            <Text>首页</Text>
+            <View className='daohang_text'>首页</View>
           </View>
           <View className='daohang'>
-            <Image className='daohang_img' src={img2}></Image>
-            <Text>房屋委托</Text>
+            <Image className='daohang_img' src={img2} onClick={this.toaddhouse}></Image>
+            <View className='daohang_text'>房屋委托</View>
           </View>
-          <View className='daohang'>
-            <Image className='daohang_img' src={img3}></Image>
-            <Text>个人中心</Text>
+          <View className='daohang' >
+            <Image className='daohang_img' src={img3} onClick={this.toperson}></Image>
+            <View className='daohang_text'>个人中心</View>
           </View>
         </View>
 

@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { View, Text, Input } from '@tarojs/components'
 import Taro from '@tarojs/taro'
+import service from '../../common/service'
 import './regist.css'
 
 export default class Rsegist extends Component {
@@ -13,7 +14,7 @@ export default class Rsegist extends Component {
       email: '',
       ensure: '',
       phone: '',
-      dress: ''
+      dress: '',
     }
   }
 
@@ -57,16 +58,48 @@ export default class Rsegist extends Component {
   }
 
   regist = () => {
-    // 
-    // 等待service接口
-    //      
-    console.log(this.state.user)
-    console.log(this.state.pwd)
-    console.log(this.state.email)
-    console.log(this.state.ensure)
-    console.log(this.state.phone)
-    console.log(this.state.dress)
-    // Taro.navigateTo({ url: '/pages/login/login' })
+    let user = this.state.user
+    let pwd = this.state.pwd
+    let phone = this.state.phone
+    let email = this.state.email
+    let dress = this.state.dress
+    let sure = this.state.ensure
+    if (user != '' && email != '' && pwd != '') {
+      if (pwd != sure) {
+        // console.log("两次密码不一致")
+        Taro.showModal({
+          title: 'alter',
+          cancelText: '取消',
+          cancelColor: 'black',
+          confirmText: '确认',
+          confirmColor: 'black',
+          content: '两次密码不一致',
+          showCancel: true,
+        })
+
+      }
+      else {
+        service.Regist(user, pwd, phone, dress, email).then(res => {
+          // console.log(res)
+          if (res) {
+            Taro.navigateTo({ url: '/pages/login/login' })
+          }
+        })
+      }
+    }
+    else {
+      // console.log("请填入所有选项")
+      Taro.showModal({
+        title: 'alter',
+        cancelText: '取消',
+        cancelColor: 'black',
+        confirmText: '确认',
+        confirmColor: 'black',
+        content: '请填入所有选项',
+        showCancel: false,
+      })
+    }
+
   }
 
   render() {
