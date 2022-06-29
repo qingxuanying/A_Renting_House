@@ -109,14 +109,29 @@ export default class Addhouse extends Component {
         let location = this.state.locationx
         let bed = this.state.bed
         let bathromm = this.state.bathromm
-        service.AddHouse(token, img, deposit, price, duration, detail,location,bed,bathromm).then(res => {
-            console.log(res)
-            if(res){
-                Taro.navigateTo({
-                    url:'/pages/index/index'
-                })
-            }
-        })
+        
+        if(detail != '' && deposit != '' && price != '' && location != '' && bed != '' && bathromm !=''){
+            service.AddHouse(token, img, deposit, price, duration, detail,location,bed,bathromm).then(res => {
+                console.log(res)
+                if(res){
+                    Taro.navigateTo({
+                        url:'/pages/index/index'
+                    })
+                }
+            })
+        }else{
+            Taro.showModal({
+                title: '提示',
+                cancelText: '取消',
+                cancelColor: 'black',
+                confirmText: '确认',
+                confirmColor: 'black',
+                content: '请填入所有必填项',
+                showCancel: false,
+              })
+        }
+
+        
     }
 
     render() {

@@ -81,6 +81,23 @@ const service = {
         },'POST').then(res=>{
             return res
         })
+    },
+    getUserInfo(token){
+        return Fetch(`user/getUserInfo?token=${token}`,{
+
+        },'GET').then(res=>{
+            return res
+        })
+    },
+    updateUser(token,username,phone,email,location){
+        return Fetch(`user/updateUser?token=${token}`,{
+            phone:phone,
+            email:email,
+            location:location,
+            username:username
+        },'PUT').then(res => {
+            return res;
+        })
     }
 }
 

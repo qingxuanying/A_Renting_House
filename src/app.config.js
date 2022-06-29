@@ -4,7 +4,8 @@ export default {
     'pages/regist/regist',
     'pages/index/index',
     'pages/addhouse/addhouse',
-    'pages/person/person'
+    'pages/person/person',
+    'pages/perinfo/perinfo'
   ],
   window: {
     backgroundTextStyle: 'light',

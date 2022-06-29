@@ -39,7 +39,7 @@ export default class Rsegist extends Component {
   }
 
   changeEnsuer = (e) => {
-    console.log(e)
+    // console.log(e)
     this.setState({
       ensure: e.detail.value
     })

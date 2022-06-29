@@ -26,6 +26,11 @@ export default class Items extends Component {
       url: '/pages/login/login'
     })
   }
+  toperinfo = () => {
+    Taro.navigateTo({
+      url: '/pages/perinfo/perinfo'
+    })
+  }
 
   render() {
     return (
@@ -45,7 +50,7 @@ export default class Items extends Component {
 
         <View className='center'>
 
-          <View className='ziliao'>
+          <View className='ziliao' onClick={this.toperinfo}>
             <View className='leftmain'>
               <Image className='a_img' src={de1}></Image>
               <View className='z_text'>用户资料</View>

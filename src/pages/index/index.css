@@ -107,3 +107,11 @@
 .daohang_text{
     color: white;
 }
+.end{
+    margin-bottom: 20%;
+    padding-top: 3%;
+    font-size: larger;
+    font-style: oblique;
+    width: 70%;
+    text-align: center;
+}

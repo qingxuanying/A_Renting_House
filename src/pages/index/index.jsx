@@ -65,7 +65,9 @@ export default class Index extends Component {
 
         <View className='index_Items'>
           {this.state.data.map((dateobj) => { return <Items key={dateobj.id} {...dateobj} ></Items> })}
+          <View className='end'>已经到底了</View>
         </View>
+        
 
         <View className='footer'>
           <View className='daohang'>
