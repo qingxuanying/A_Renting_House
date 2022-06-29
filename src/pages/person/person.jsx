@@ -9,6 +9,7 @@ import de2 from './img/de2.png'
 import de3 from './img/de3.png'
 import de4 from './img/de4.png'
 import next from './img/next.png'
+import zu1 from './img/zulin.png'
 
 
 export default class Items extends Component {
@@ -69,6 +70,16 @@ export default class Items extends Component {
             <View className='leftmain'>
               <Image className='a_img' src={de1}></Image>
               <View className='z_text'>用户资料</View>
+            </View>
+            <View className='next'>
+              <Image className='next_img' src={next}></Image>
+            </View>
+          </View>
+
+          <View className='ziliao' onClick={this.tozulin}>
+            <View className='leftmain'>
+              <Image className='a_img' src={zu1}></Image>
+              <View className='z_text'>租赁记录</View>
             </View>
             <View className='next'>
               <Image className='next_img' src={next}></Image>

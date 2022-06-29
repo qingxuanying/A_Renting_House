@@ -39,13 +39,13 @@ export default class Login extends Component {
 
       service.Login(user, pwd).then(res => {
         if (res) {
-          console.log(res)
+          // console.log(res)
           if (res.token) {
             
             Taro.setStorageSync('token',res.token)
           
             Taro.setStorageSync('username',user)
-            console.log('登录成功')
+            // console.log('登录成功')
             Taro.navigateTo({
               url:'/pages/index/index'
             })

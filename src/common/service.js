@@ -15,7 +15,7 @@ const Fetch = (url, data = {}, method = 'GET') => {
   }).then(res => {
     switch (res.statusCode) {
       case 200:
-        console.log(res);
+        // console.log(res);
         if (res.data) {
           return res.data;
         } else {
@@ -110,6 +110,16 @@ const service = {
   findByname(name){
     return Fetch(`house/findByName?name=${name}`,{}).then(res=>{
         return res
+    })
+  },
+  getHouse(id){
+    return Fetch(`house/getHouse?house_id=${id}`,{}).then(res=>{
+      return res
+    })
+  },
+  addOder(token,house_id) {
+    return Fetch(`order/addOrder?token=${token}&house_id=${house_id}`,{},'POST').then(res=>{
+      return res
     })
   }
 

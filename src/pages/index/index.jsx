@@ -51,7 +51,7 @@ export default class Index extends Component {
     // console.log('132465')
     service.findByname(name).then(res => {
       if (res) {
-        console.log(res)
+        // console.log(res)
         this.setState({
           data: res
         })
