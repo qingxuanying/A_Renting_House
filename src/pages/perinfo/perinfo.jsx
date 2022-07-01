@@ -7,7 +7,7 @@ import service from '../../common/service'
 
 
 
-export default class Items extends Component {
+export default class Perinfo extends Component {
   constructor(props) {
     super(props)
     this.state = {

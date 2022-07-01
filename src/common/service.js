@@ -107,18 +107,37 @@ const service = {
       return res
     })
   },
-  findByname(name){
-    return Fetch(`house/findByName?name=${name}`,{}).then(res=>{
-        return res
-    })
-  },
-  getHouse(id){
-    return Fetch(`house/getHouse?house_id=${id}`,{}).then(res=>{
+  findByname(name) {
+    return Fetch(`house/findByName?name=${name}`, {}).then(res => {
       return res
     })
   },
-  addOder(token,house_id) {
-    return Fetch(`order/addOrder?token=${token}&house_id=${house_id}`,{},'POST').then(res=>{
+  getHouse(id) {
+    return Fetch(`house/getHouse?house_id=${id}`, {}).then(res => {
+      return res
+    })
+  },
+  addOder(token, house_id, dateto,deposit,price) {
+    return Fetch(`order/confOrder?token=${token}&house_id=${house_id}`, {
+      dateto: dateto,
+      deposit:deposit,
+      price:price
+    }, 'POST').then(res => {
+      return res
+    })
+  },
+  getOders(token) {
+    return Fetch(`order/getOrders?token=${token}`, {}, 'GET').then(res => {
+      return res
+    })
+  },
+  getLianxi(token,house_id){
+    return Fetch(`order/getinfo?token=${token}&house_id=${house_id}`).then(res => {
+      return res
+    })
+  },
+  getOrderDetail(order_id){
+    return Fetch(`order/getOrder?order_id=${order_id}`).then(res=>{
       return res
     })
   }

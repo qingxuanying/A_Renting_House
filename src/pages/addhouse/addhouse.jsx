@@ -14,13 +14,14 @@ export default class Addhouse extends Component {
             img: '',
             deposit: '',
             price: '',
-            duration: '',
             detail: '',
             locationx:'',
             bed:'',
             bathromm:'',
-            name:''
-
+            name:'',
+            year:'',
+            month:'',
+            day:''
         }
     }
 
@@ -44,7 +45,9 @@ export default class Addhouse extends Component {
             count: '1',
             sourceType: ['original', 'camera'],
             success: (res) => {
-                // console.log("c22222222")
+
+                // 压缩
+                console.log("c22222222")
                 Taro.compressImage({
                     src:res.tempFilePaths[0],
                     quality:0.01,
@@ -58,9 +61,13 @@ export default class Addhouse extends Component {
                         })
                     }
                 })
+
+                this.setState({
+                    img:res.tempFilePaths[0]
+                })
             }
         })
-        console.log(this.state.img)
+        // console.log(this.state.img)
     }
 
 
@@ -74,11 +81,11 @@ export default class Addhouse extends Component {
             price: e.target.value
         })
     }
-    getDuration = (e) => {
-        this.setState({
-            duration: e.target.value
-        })
-    }
+    // getDuration = (e) => {
+    //     this.setState({
+    //         duration: e.target.value
+    //     })
+    // }
     getDetail = (e) => {
         this.setState({
             detail: e.target.value
@@ -104,12 +111,29 @@ export default class Addhouse extends Component {
             name:e.target.value
         })
     }
+    getYear = (e) => {
+        this.setState({
+            year:e.target.value
+        })
+    }
+    getMonth = (e) => {
+        this.setState({
+            month:e.target.value
+        })
+    }
+    getDay = (e) => {
+        this.setState({
+            day:e.target.value
+        })
+    }
 
-    release = (e) => {
+    release = () => {
         let token = Taro.getStorageSync('token')
         let img = this.state.img
         let deposit = this.state.deposit
-        let duration = this.state.duration
+        let year = this.state.year
+        let month = this.state.month
+        let day = this.state.day
         let price = this.state.price
         let detail = this.state.detail
         let location = this.state.locationx
@@ -117,7 +141,8 @@ export default class Addhouse extends Component {
         let bathromm = this.state.bathromm
         let name = this.state.name
         
-        if(detail != '' && deposit != '' && price != '' && location != '' && bed != '' && bathromm !='' && name!=''){
+        let duration = `${year}/${month}/${day}`
+        if(detail != '' && deposit != '' && price != '' && location != '' && bed != '' && bathromm !='' && name!=''&& day!='' && month!='' && year != ''){
             service.AddHouse(token, img, deposit, price, duration, detail,location,bed,bathromm,name).then(res => {
                 console.log(res)
                 if(res){
@@ -164,11 +189,11 @@ export default class Addhouse extends Component {
                     </View>
                     <View className='detail'>
                         <View className='leftx'>订金</View>
-                        <Input className='rightinput' placeholder='请填写金额' onInput={this.getDeposit}></Input>
+                        <Input className='rightinput' placeholder='请填写金额  (元)' onInput={this.getDeposit}></Input>
                     </View>
                     <View className='detail'>
                         <View className='leftx'>价格</View>
-                        <Input className='rightinput' placeholder='请填写金额' onInput={this.getPrice}></Input>
+                        <Input className='rightinput' placeholder='请填写金额 (元/天)' onInput={this.getPrice}></Input>
                     </View>
                     <View className='detail'>
                         <View className='leftx'>地址</View>
@@ -183,8 +208,15 @@ export default class Addhouse extends Component {
                         <Input className='rightinput' placeholder='请填写卫生间数' onInput={this.getBathroom}></Input>
                     </View>
                     <View className='detail'>
-                        <View className='leftx'>出租时间限制</View>
-                        <Input className='rightinput' placeholder='请填写时间' onInput={this.getDuration}></Input>
+                        <View className='leftx'>最大出租至</View>
+                        <View className='inp'>
+                            <Input className='in' onInput={this.getYear}></Input>
+                            <View className='tnina'>年</View>
+                            <Input className='in' onInput={this.getMonth}></Input>
+                            <View className='tyue'>月</View>
+                            <Input className='in' onInput={this.getDay}></Input>
+                            <View className='tri'>日</View>
+                        </View>
                     </View>
 
                 </View>

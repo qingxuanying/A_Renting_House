@@ -4,7 +4,7 @@ import Taro from '@tarojs/taro'
 import './help.css'
 
 
-export default class Items extends Component {
+export default class Help extends Component {
 
     clickTop = () => {
         Taro.showModal({

@@ -3,12 +3,13 @@
     height: 260px;
 }
 .item{
-    width: 80%;
+    width: 86%;
     margin: 0 auto;
     border-radius: 45px;
-    background-color: gainsboro;
+    background-color: #F9F9FB;
     height: 230px;
     display: flex;
+    overflow: hidden;
 }
 
 .leftItem{
@@ -57,13 +58,11 @@
     /* border: solid 2px black; */
     margin-right: 2%;
     padding-right:8% ;
+    width: 50%;
 }
 .bathroom{
     /* border: solid 2px black; */
     margin-right: 2%;
     padding-right:8% ;
-}
-.star{
-    /* border: solid 2px black; */
-    padding-right:8% ;
+    width: 50%;
 }

@@ -79,3 +79,14 @@
     font-size: larger;
     border-radius: 45px;
 }
+.inp{
+    display: flex;
+    width: 85%;
+    /* border: 3px black solid; */
+    margin: 0 auto;
+    font-size: large;
+}
+.in{
+    text-align: right;
+    /* width: 20%; */
+}

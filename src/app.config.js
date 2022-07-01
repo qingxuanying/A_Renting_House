@@ -8,7 +8,10 @@ export default {
     'pages/perinfo/perinfo',
     'pages/safe/safe',
     'pages/help/help',
-    'pages/detail/detail'
+    'pages/detail/detail',
+    'pages/zulin/zulin',
+    'pages/conforder/conforder',
+    'pages/orderDetail/orderDetail'
   ],
   window: {
     backgroundTextStyle: 'light',

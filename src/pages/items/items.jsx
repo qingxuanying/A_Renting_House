@@ -4,13 +4,11 @@ import Taro from '@tarojs/taro'
 import './items.css'
 import bed from './img/bed.png'
 import bathroom from './img/bathroom.png'
-import star from './img/star.png'
 
 export default class Items extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      star: 5,
     }
   }
 
@@ -44,10 +42,10 @@ export default class Items extends Component {
                 <Image className='icon_items' src={bathroom}></Image>
                 <Text>{this.props.toilet}</Text>
               </View>
-              <View className='star'>
+              {/* <View className='star'>
                 <Image className='icon_items' src={star}></Image>
                 <Text>{this.state.star}</Text>
-              </View>
+              </View> */}
 
             </View>
           </View>

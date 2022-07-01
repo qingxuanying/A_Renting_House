@@ -8,7 +8,7 @@ import service from '../../common/service'
 
 
 
-export default class Items extends Component {
+export default class Safe extends Component {
     constructor(props) {
         super(props)
         this.state = {

@@ -12,7 +12,7 @@ import next from './img/next.png'
 import zu1 from './img/zulin.png'
 
 
-export default class Items extends Component {
+export default class Person extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -45,6 +45,11 @@ export default class Items extends Component {
   toHelp = () => {
     Taro.navigateTo({
       url: '/pages/help/help'
+    })
+  }
+  tozulin = () => {
+    Taro.navigateTo({
+      url: '/pages/zulin/zulin'
     })
   }
 
