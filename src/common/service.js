@@ -2,73 +2,68 @@ import Taro from '@tarojs/taro'
 
 
 const preHttp = 'http://localhost:8080/A_Renting/'
-const Fetch = (url, data = {}, method = 'GET') => {
+const Fetch = async (url, data = {}, method = 'GET') => {
   const header = {
     'Access-Control-Allow-Origin': 'http://localhost:8080/A_Renting/',
     'content-type': 'application/json',
   };
-  return Taro.request({
+  const res = await Taro.request({
     url: preHttp + url,
     data,
     method,
     header
-  }).then(res => {
-    switch (res.statusCode) {
-      case 200:
-        // console.log(res);
-        if (res.data) {
-          return res.data;
-        } else {
-          return res.statusCode;
-        }
-        case 400:
-          throw new Error('没有权限访问');
-        case 401:
-          throw new Error('未授权');
-        case 404:
-          throw new Error('not found');
-        case 500:
-        case 502:
-          return {
-            msg: 'server_wrong'
-          }
-    }
   });
+  switch (res.statusCode) {
+    case 200:
+      // console.log(res);
+      if (res.data) {
+        return res.data;
+      } else {
+        return res.statusCode;
+      }
+      case 400:
+        throw new Error('没有权限访问');
+      case 401:
+        throw new Error('未授权');
+      case 404:
+        throw new Error('not found');
+      case 500:
+      case 502:
+        return {
+          msg: 'server_wrong'
+        };
+  }
 };
 
 const service = {
   //regist
-  Regist(username, password, phone, location, email) {
-    return Fetch(`user/addUser`, {
+  async Regist(username, password, phone, location, email) {
+    const res = await Fetch(`user/addUser`, {
       username: username,
       password: password,
       phone: phone,
       location: location,
       email: email
-    }, 'POST').then(res => {
-      // console.log(res)
-      return res
-    })
+    }, 'POST');
+    return res;
 
   },
   //Login
-  Login(username, password) {
-    return Fetch('user/login', {
+  async Login(username, password) {
+    const res = await Fetch('user/login', {
       username: username,
       password: password
-    }, 'POST').then(res => {
-      return res
-    })
+    }, 'POST');
+    return res;
   },
 
   //getAllHouses
-  GetAllHouses() {
-    return Fetch('house/getAllHouses', {}, 'GET').then(res => {
-      return res
-    })
+  async GetAllHouses() {
+    const res = await Fetch('house/getAllHouses', {}, 'GET');
+    return res;
   },
-  AddHouse(token, img, deposit, price, duration, detail, location, bed, bathroom, name) {
-    return Fetch(`house/addHouse?token=${token}`, {
+  async AddHouse(token, img, deposit, price, duration, detail, location, bed, bathroom, name) {
+    const res = await Fetch(`house/addHouse?token=${token}`, {
       picture: img,
       deposit: deposit,
       price: price,
@@ -78,68 +73,58 @@ const service = {
       bed: bed,
       toilet: bathroom,
       name: name
-    }, 'POST').then(res => {
-      return res
-    })
+    }, 'POST');
+    return res;
   },
-  getUserInfo(token) {
-    return Fetch(`user/getUserInfo?token=${token}`, {
-
-    }, 'GET').then(res => {
-      return res
-    })
+  async getUserInfo(token) {
+    const res = await Fetch(`user/getUserInfo?token=${token}`, {}, 'GET');
+    return res;
   },
-  updateUser(token, username, phone, email, location) {
-    return Fetch(`user/updateUser?token=${token}`, {
+  async updateUser(token, username, phone, email, location) {
+    const res = await Fetch(`user/updateUser?token=${token}`, {
       phone: phone,
       email: email,
       location: location,
       username: username
-    }, 'PUT').then(res => {
-      return res;
-    })
+    }, 'PUT');
+    return res;
   },
-  updatePassword(token, old, _new) {
-    return Fetch(`user/updatePassword?token=${token}`, {
+  async updatePassword(token, old, _new) {
+    const res = await Fetch(`user/updatePassword?token=${token}`, {
       _new: _new,
       old: old
-    }, 'PUT').then(res => {
-      return res
-    })
+    }, 'PUT');
+    return res;
   },
-  findByname(name) {
-    return Fetch(`house/findByName?name=${name}`, {}).then(res => {
-      return res
-    })
+  async findByname(name) {
+    const res = await Fetch('house/findByName?name=', {
+      name: name,
+    }, 'GET');
+    return res;
   },
-  getHouse(id) {
-    return Fetch(`house/getHouse?house_id=${id}`, {}).then(res => {
-      return res
-    })
+  async getHouse(id) {
+    const res = await Fetch(`house/getHouse?house_id=${id}`, {});
+    return res;
   },
-  addOder(token, house_id, dateto,deposit,price) {
-    return Fetch(`order/confOrder?token=${token}&house_id=${house_id}`, {
+  async addOder(token, house_id, dateto, deposit, price) {
+    const res = await Fetch(`order/confOrder?token=${token}&house_id=${house_id}`, {
       dateto: dateto,
-      deposit:deposit,
-      price:price
-    }, 'POST').then(res => {
-      return res
-    })
+      deposit: deposit,
+      price: price
+    }, 'POST');
+    return res;
   },
-  getOders(token) {
-    return Fetch(`order/getOrders?token=${token}`, {}, 'GET').then(res => {
-      return res
-    })
+  async getOders(token) {
+    const res = await Fetch(`order/getOrders?token=${token}`, {}, 'GET');
+    return res;
   },
-  getLianxi(token,house_id){
-    return Fetch(`order/getinfo?token=${token}&house_id=${house_id}`).then(res => {
-      return res
-    })
+  async getLianxi(token, house_id) {
+    const res = await Fetch(`order/getinfo?token=${token}&house_id=${house_id}`);
+    return res;
   },
-  getOrderDetail(order_id){
-    return Fetch(`order/getOrder?order_id=${order_id}`).then(res=>{
-      return res
-    })
+  async getOrderDetail(order_id) {
+    const res = await Fetch(`order/getOrder?order_id=${order_id}`);
+    return res;
   }
 
 }

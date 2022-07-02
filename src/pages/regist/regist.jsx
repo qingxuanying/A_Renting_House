@@ -90,7 +90,7 @@ export default class Rsegist extends Component {
     else {
       // console.log("请填入所有选项")
       Taro.showModal({
-        title: 'alter',
+        title: '提示',
         cancelText: '取消',
         cancelColor: 'black',
         confirmText: '确认',
