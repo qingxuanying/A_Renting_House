@@ -21,7 +21,7 @@ export default class Zulin extends Component {
         let token=Taro.getStorageSync('token')
         service.getOders(token).then(res=>{
             if(res){
-                console.log(res)
+                // console.log(res)
                 this.setState({
                     data: res.order_infos
                 })

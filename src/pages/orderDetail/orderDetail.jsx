@@ -20,9 +20,9 @@ export default class OrderDetail extends Component {
 
     componentDidMount() {
         let id = Taro.getCurrentInstance().router.params.id
-        console.log(id)
+        // console.log(id)
         service.getOrderDetail(id).then(res => {
-            console.log(res.order_info)
+            // console.log(res.order_info)
             if (res) {
                 this.setState({
                     data: res.order_info,

@@ -23,7 +23,7 @@ export default class Perinfo extends Component {
     service.getUserInfo(token).then(res=>{
       // console.log(res)
       if(res){
-        console.log('15611111')
+        // console.log('15611111')
         this.setState({
           name: res.username,
           phone: res.phone,
@@ -59,10 +59,10 @@ export default class Perinfo extends Component {
     let phone=this.state.phone
     let email=this.state.email
     let location=this.state.location
-    console.log(username)
-    console.log(phone)
-    console.log(email)
-    console.log(location)
+    // console.log(username)
+    // console.log(phone)
+    // console.log(email)
+    // console.log(location)
     service.updateUser(token,username,phone,email,location).then(res=>{
       if(res){
         // Taro.showModal({

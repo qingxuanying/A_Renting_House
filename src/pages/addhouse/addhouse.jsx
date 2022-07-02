@@ -47,14 +47,14 @@ export default class Addhouse extends Component {
             success: (res) => {
 
                 // 压缩
-                console.log("c22222222")
+                // console.log("c22222222")
                 Taro.compressImage({
                     src:res.tempFilePaths[0],
                     quality:0.01,
                     success: async (res1) => {
-                        console.log("cs33333333")
+                        // console.log("cs33333333")
                         let base64= await this.filetoBase64(res1.tempFilePath)
-                        console.log(base64)
+                        // console.log(base64)
                         // console.log("4444444444444")
                         this.setState({
                             img:base64
@@ -144,7 +144,7 @@ export default class Addhouse extends Component {
         let duration = `${year}/${month}/${day}`
         if(detail != '' && deposit != '' && price != '' && location != '' && bed != '' && bathromm !='' && name!=''&& day!='' && month!='' && year != ''){
             service.AddHouse(token, img, deposit, price, duration, detail,location,bed,bathromm,name).then(res => {
-                console.log(res)
+                // console.log(res)
                 if(res){
                     Taro.navigateTo({
                         url:'/pages/index/index'

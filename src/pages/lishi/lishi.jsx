@@ -26,7 +26,7 @@ export default class Lishi extends Component {
         let id =this.props.houseId
         let token =Taro.getStorageSync('token')
         service.getLianxi(token,id).then(res=>{
-            console.log(res)
+            // console.log(res)
             if(res){
                 Taro.showModal({
                     title: '提示',

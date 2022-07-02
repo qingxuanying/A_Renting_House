@@ -29,7 +29,7 @@ export default class Conforder extends Component {
                 this.setState({
                     data: res
                 })
-                console.log(res)
+                // console.log(res)
             }
         })
 
@@ -65,7 +65,7 @@ export default class Conforder extends Component {
             && year > 2022 && year < 3000 && day < 32 && day > 0 && month > 0 && month < 13) {
             service.addOder(token, id, dateto, deposit, price).then(res => {
                 if (res) {
-                    console.log(res.message)
+                    // console.log(res.message)
                     if (res.message != '已添加该房屋，请前往租赁页面查看详情') {
                         Taro.navigateTo({
                             url: '/pages/index/index'
