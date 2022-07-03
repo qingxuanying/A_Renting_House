@@ -75,7 +75,7 @@ export default class Perinfo extends Component {
         //   showCancel: false,
         // })
         Taro.setStorageSync('username',username)
-        Taro.navigateTo({
+        Taro.redirectTo({
           url:'/pages/person/person'
         })     }
     })

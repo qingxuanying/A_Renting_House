@@ -44,7 +44,7 @@ export default class Safe extends Component {
             if (_new == sure) {
                 service.updatePassword(token, old, _new).then(res => {
                     if (res == true) {
-                        Taro.navigateTo({
+                        Taro.redirectTo({
                             url: '/pages/login/login'
                         })
                     } else {

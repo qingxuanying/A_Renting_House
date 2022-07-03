@@ -15,7 +15,7 @@ export default class Items extends Component {
   toDetail = () => {
     let id=this.props.id
     // console.log(id)
-    Taro.navigateTo({
+    Taro.redirectTo({
       url: `/pages/detail/detail?id=${id}`,
     })
   }

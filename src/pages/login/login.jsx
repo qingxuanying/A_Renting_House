@@ -46,7 +46,7 @@ export default class Login extends Component {
           
             Taro.setStorageSync('username',user)
             // console.log('登录成功')
-            Taro.navigateTo({
+            Taro.redirectTo({
               url:'/pages/index/index'
             })
           } else {

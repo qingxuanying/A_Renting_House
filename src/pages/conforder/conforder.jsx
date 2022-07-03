@@ -92,7 +92,7 @@ export default class Conforder extends Component {
         }
     }
     toMain = () => {
-        Taro.navigateTo({
+        Taro.redirectTo({
             url: 'pages/index/index'
         })
     }

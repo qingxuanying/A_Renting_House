@@ -11,7 +11,7 @@ export default {
     'pages/detail/detail',
     'pages/zulin/zulin',
     'pages/conforder/conforder',
-    'pages/orderDetail/orderDetail'
+    'pages/orderDetail/orderDetail',
   ],
   window: {
     backgroundTextStyle: 'light',

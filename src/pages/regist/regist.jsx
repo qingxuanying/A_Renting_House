@@ -109,7 +109,7 @@ export default class Rsegist extends Component {
         <View className='regist_container' >
 
           <Input className='regist_input' placeholder='用户名' maxlength='16' onInput={this.changeUser}></Input>
-          <Input className='regist_input' placeholder='邮箱' maxlength='16' onInput={this.changeEmail}></Input>
+          <Input className='regist_input' placeholder='邮箱' maxlength='36' onInput={this.changeEmail}></Input>
           <Input className='regist_input' type='password' placeholder='密码' maxlength='16' onInput={this.changePwd}></Input>
           <Input className='regist_input' type='password' placeholder='确认密码' maxlength='16' onInput={this.changeEnsuer}></Input>
           <Input className='regist_input' placeholder='电话号码' maxlength='11' onInput={this.changePhone}></Input>

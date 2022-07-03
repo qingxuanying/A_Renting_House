@@ -66,7 +66,7 @@ export default class Detail extends Component {
     }
 
     back = () => {
-        Taro.navigateTo({
+        Taro.redirectTo({
             url:'/pages/index/index'
         })
     }
